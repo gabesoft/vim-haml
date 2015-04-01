@@ -349,7 +349,7 @@ function! csscomplete#CompleteCSS(findstart, base)
         " Complete values
         let entered_imp = matchstr(line, '.\{-}!\s*\zs[a-zA-Z ]*$')
 
-        let values = ["important"]
+        let values = ["important", "global", "default"]
 
         for m in values
             if m =~? '^'.entered_imp
@@ -407,7 +407,8 @@ function! csscomplete#CompleteCSS(findstart, base)
 
         endif
 
-        let values = ["charset", "page", "media", "import", "font-face"]
+        "let values = ["charset", "page", "media", "import", "font-face"]
+        let values = ["charset", "page", "media", "import", "font-face", "include", "extend", "mixin", "function", "return"]
 
         let entered_atrule = matchstr(line, '.*@\zs[a-zA-Z-]*$')
 
