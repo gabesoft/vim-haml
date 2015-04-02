@@ -199,7 +199,7 @@ syn keyword cssAnimationAttr contained running paused
 "------------------------------------------------
 "  CSS Backgrounds and Borders Module Level 3
 "  http://www.w3.org/TR/css3-background/
-syn match cssBackgroundProp contained "\<background\(-\(attachment\|clip\|color\|image\|origin\|position\|repeat\|size\)\)\=\>"
+syn match cssBackgroundProp contained "\<background\(-\(attachment\|clip\|color\|image\|origin\|position\|position-x\|position-y\|repeat\|size\)\)\=\>"
 " background-attachment attributes
 syn keyword cssBackgroundAttr contained scroll fixed local
 
