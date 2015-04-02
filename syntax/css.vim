@@ -633,7 +633,7 @@ if version >= 508 || !exists("did_css_syn_inits")
   HiLink cssClassNameDot Function
   HiLink cssProp StorageClass
   HiLink cssAttr Constant
-  HiLink cssUnitDecorators Number
+  HiLink cssUnitDecorators PreProc
   HiLink cssNoise Noise
   HiLink atKeyword Comment
   delcommand HiLink
