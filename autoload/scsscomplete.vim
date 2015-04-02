@@ -26,6 +26,7 @@ function! s:borders(line)
     let dot        = strridx(line, '.')
     let anddot     = strridx(line, '&.')
     let andcolon   = strridx(line, '&:')
+    let interp     = strridx(line, '#{')
     let semicolon  = strridx(line, ';')
     let opencomm   = strridx(line, '/*')
     let closecomm  = strridx(line, '*/')
@@ -39,6 +40,7 @@ function! s:borders(line)
     if dot > -1        | let borders[dot]        = "dot"        | endif
     if anddot > -1     | let borders[anddot]     = "anddot"     | endif
     if andcolon > -1   | let borders[andcolon]   = "andcolon"   | endif
+    if interp > -1     | let borders[interp]   = "interp"       | endif
     if semicolon > -1  | let borders[semicolon]  = "semicolon"  | endif
     if opencomm > -1   | let borders[opencomm]   = "opencomm"   | endif
     if closecomm > -1  | let borders[closecomm]  = "closecomm"  | endif
@@ -57,12 +59,42 @@ function! s:complete(base)
     endif
 
     let borders = s:borders(line)
+    let prop_borders = ["openbrace", "semicolon", "opencomm", "closecomm", "style"]
+    let last = empty(borders) ? '' : borders[max(keys(borders))]
+
+    if empty(borders)
+        return haml#css#props() + haml#html#tags() + haml#css#scss_functions()
+    elseif index(prop_borders, last) > -1
+        return haml#css#props() + haml#html#tags() + haml#css#scss_functions()
+    elseif last == 'andcolon'
+        return haml#css#pseudos()
+    elseif last == 'colon'
+        let prop = tolower(matchstr(line, '\zs[a-zA-Z-]*\ze\s*:[^:]\{-}$'))
+        let vals =  haml#css#prop_values(prop)
+        if empty(vals)
+            return haml#css#pseudos()
+        else
+            return vals + haml#css#scss_functions()
+        endif
+    elseif last == 'exclam'
+        return [ "important", "default", "global" ]
+    elseif last == 'atrule'
+        let afterat = matchstr(line, '.*@\zs.*')
+        if strlen(afterat) == 0
+            return haml#css#at_rules()
+        else
+            let atrulename = matchstr(line, '.*@\zs[a-zA-Z-]\+\ze')
+            return haml#css#at_rule_values(atrulename)
+        endif
+    else
+        return []
+    endif
 endfunction
 
 function! scsscomplete#CompleteSCSS(findstart, base)
     if a:findstart
-        call s:findstart()
+        return s:findstart()
     else
-        call s:complete(a:base)
+        return s:complete(a:base)
     endif
 endfunction
