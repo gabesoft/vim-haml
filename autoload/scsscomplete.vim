@@ -69,6 +69,7 @@ function! s:complete(base)
     elseif last == 'andcolon'
         return haml#css#pseudos()
     elseif last == 'colon'
+        "return [ { 'word': 'translate-x(', 'abbr': 'translate-x($x, $y)', 'menu': 'sass function' } ]
         let prop = tolower(matchstr(line, '\zs[a-zA-Z-]*\ze\s*:[^:]\{-}$'))
         let vals =  haml#css#prop_values(prop)
         if empty(vals)
