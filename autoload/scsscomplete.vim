@@ -1,7 +1,3 @@
-function! s:css_keywords()
-    " code
-endfunction
-
 function! s:findstart()
     let line  = getline('.')
     let start = col('.') - 1
@@ -63,17 +59,18 @@ function! s:complete(base)
     let last = empty(borders) ? '' : borders[max(keys(borders))]
 
     if empty(borders)
-        return haml#css#props() + haml#html#tags() + haml#css#scss_functions()
+        return haml#css#props() + haml#html#tags()
     elseif index(prop_borders, last) > -1
-        return haml#css#props() + haml#html#tags() + haml#css#scss_functions()
+        return haml#css#props() + haml#html#tags()
     elseif last == 'andcolon'
         return haml#css#pseudos()
     elseif last == 'colon'
-        "return [ { 'word': 'translate-x(', 'abbr': 'translate-x($x, $y)', 'menu': 'sass function' } ]
         let prop = tolower(matchstr(line, '\zs[a-zA-Z-]*\ze\s*:[^:]\{-}$'))
         let vals =  haml#css#prop_values(prop)
         if empty(vals)
             return haml#css#pseudos()
+        elseif match(prop, 'color$') != -1
+            return vals + haml#css#scss_functions() + haml#css#colors()
         else
             return vals + haml#css#scss_functions()
         endif

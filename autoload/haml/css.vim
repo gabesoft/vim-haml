@@ -278,7 +278,7 @@ let s:props         = {
             \ "background-attachment": [ "scroll", "fixed", "local", "inherit" ],
             \ "background-blend-mode": [],
             \ "background-clip": [ "border-box", "padding-box", "content-box", "inherit" ],
-            \ "background-color": [  "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "background-color": [  "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "background-image": [ "none", "url(", "inherit" ],
             \ "background-origin": [ "border-box", "padding-box", "content-box", "inherit" ],
             \ "background-position": [ "left", "center", "right", "top", "bottom", "inherit" ],
@@ -289,21 +289,21 @@ let s:props         = {
             \ "block-size": [ "border-box", "content-box", "max-content", "min-content", "available", "fit-content", "auto", "inherit" ],
             \ "border": [],
             \ "border-block-end": [],
-            \ "border-block-end-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "border-block-end-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "border-block-end-style": [ "dashed", "dotted", "groove" ],
             \ "border-block-end-width": [],
             \ "border-block-start": [],
-            \ "border-block-start-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "border-block-start-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "border-block-start-style": [ "dashed", "dotted", "groove" ],
             \ "border-block-start-width": [],
             \ "border-bottom": [],
-            \ "border-bottom-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "border-bottom-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "border-bottom-left-radius": [],
             \ "border-bottom-right-radius": [],
             \ "border-bottom-style": [ "none", "hidden", "dotted", "dashed", "solid", "double", "groove", "ridge", "inset", "outset", "inherit" ],
             \ "border-bottom-width": [ "thin", "medium", "thick" ],
             \ "border-collapse": [ "collapse", "separate", "inherit" ],
-            \ "border-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "border-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "border-image": [ "url(" ],
             \ "border-image-outset": [],
             \ "border-image-repeat": [],
@@ -311,26 +311,26 @@ let s:props         = {
             \ "border-image-source": [ "url(", "none", "linear-gradient(" ],
             \ "border-image-width": [],
             \ "border-inline-end": [],
-            \ "border-inline-end-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "border-inline-end-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "border-inline-end-style": [ "dashed", "dotted", "groove" ],
             \ "border-inline-end-width": [],
             \ "border-inline-start": [],
-            \ "border-inline-start-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "border-inline-start-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "border-inline-start-style": [ "dashed", "dotted", "groove" ],
             \ "border-inline-start-width": [],
             \ "border-left": [],
-            \ "border-left-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "border-left-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "border-left-style": [ "none", "hidden", "dotted", "dashed", "solid", "double", "groove", "ridge", "inset", "outset", "inherit" ],
             \ "border-left-width": [ "thin", "medium", "thick" ],
             \ "border-radius": [],
             \ "border-right": [],
-            \ "border-right-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "border-right-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "border-right-style": [ "none", "hidden", "dotted", "dashed", "solid", "double", "groove", "ridge", "inset", "outset", "inherit" ],
             \ "border-right-width": [ "thin", "medium", "thick" ],
             \ "border-spacing": [],
             \ "border-style": [ "none", "hidden", "dotted", "dashed", "solid", "double", "groove", "ridge", "inset", "outset", "inherit" ],
             \ "border-top": [],
-            \ "border-top-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "border-top-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "border-top-left-radius": [],
             \ "border-top-right-radius": [],
             \ "border-top-style": [ "none", "hidden", "dotted", "dashed", "solid", "double", "groove", "ridge", "inset", "outset", "inherit" ],
@@ -347,12 +347,12 @@ let s:props         = {
             \ "clear": [ "none", "left", "right", "both", "inherit" ],
             \ "clip": [ "auto", "inherit", "rect(" ],
             \ "clip-path": [ "none", "inherit", "url(" ],
-            \ "color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "column-count": [ "auto" ],
             \ "column-fill": [ "auto", "balance", "inherit", "initial", "unset" ],
             \ "column-gap": [],
             \ "column-rule": [],
-            \ "column-rule-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "column-rule-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "column-rule-style": [ "none", "hidden", "dotted", "dashed", "solid", "double", "groove", "ridge", "inset", "outset", "inherit" ],
             \ "column-rule-width": [ "thin", "medium", "thick", "inherit" ],
             \ "column-span": [ "none", "all", "inherit" ],
@@ -501,7 +501,7 @@ let s:props         = {
             \ "text-align-last": [],
             \ "text-combine-upright": [],
             \ "text-decoration": [ "blink", "dashed", "dotted", "double", "line-through", "none", "overline", "solid", "underline", "wavy" ],
-            \ "text-decoration-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ] + keys(s:colors),
+            \ "text-decoration-color": [ "rgb(", "rgba(", "hsl(", "hsla(", "transparent", "inherit", "currentColor" ],
             \ "text-decoration-line": [ "underline", "overline", "line-through", "blink", "none" ],
             \ "text-decoration-style": [ "solid", "double", "dotted", "dashed", "wavy" ],
             \ "text-indent": [ "hanging", "each-line" ],
@@ -541,7 +541,17 @@ function! haml#css#props()
 endfunction
 
 function! haml#css#scss_functions()
-    return keys(s:scss_functions)
+    let funcs = []
+
+    for [key, val] in items(s:scss_functions)
+        call add(funcs, {
+                    \ 'word': key,
+                    \ 'abbr': val,
+                    \ 'menu': 'sass function'
+                    \ })
+    endfor
+
+    return funcs
 endfunction
 
 function! haml#css#pseudos()
@@ -570,6 +580,19 @@ endfunction
 
 function! haml#css#units()
     return s:units
+endfunction
+
+function! haml#css#colors()
+    let colors = []
+
+    for [key, val] in items(s:colors)
+        call add(colors, {
+                    \ 'word': key,
+                    \ 'menu': val
+                    \ })
+    endfor
+
+    return colors
 endfunction
 
 " vim:foldmethod=marker:foldlevel=0

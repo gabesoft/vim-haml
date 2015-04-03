@@ -27,12 +27,14 @@ syn match sassVariable "$[[:alnum:]_-]\+"
 syn match sassVariableAssignment "\%([!$][[:alnum:]_-]\+\s*\)\@<=\%(||\)\==" nextgroup=sassCssAttribute skipwhite
 syn match sassVariableAssignment "\%([!$][[:alnum:]_-]\+\s*\)\@<=:" nextgroup=sassCssAttribute skipwhite
 
-syn match sassFunction "\<\%(rgb\|rgba\|red\|green\|blue\|mix\)\>(\@=" contained
-syn match sassFunction "\<\%(hsl\|hsla\|hue\|saturation\|lightness\|adjust-hue\|lighten\|darken\|saturate\|desaturate\|grayscale\|complement\)\>(\@=" contained
-syn match sassFunction "\<\%(alpha\|opacity\|rgba\|opacify\|fade-in\|transparentize\|fade-out\)\>(\@=" contained
-syn match sassFunction "\<\%(unquote\|quote\)\>(\@=" contained
-syn match sassFunction "\<\%(percentage\|round\|ceil\|floor\|abs\)\>(\@=" contained
-syn match sassFunction "\<\%(type-of\|unit\|unitless\|comparable\)\>(\@=" contained
+"syn match sassFunction "\<\%(rgb\|rgba\|red\|green\|blue\|mix\)\>(\@=" contained
+"syn match sassFunction "\<\%(hsl\|hsla\|hue\|saturation\|lightness\|adjust-hue\|lighten\|darken\|saturate\|desaturate\|grayscale\|complement\)\>(\@=" contained
+"syn match sassFunction "\<\%(alpha\|opacity\|rgba\|opacify\|fade-in\|transparentize\|fade-out\)\>(\@=" contained
+"syn match sassFunction "\<\%(unquote\|quote\)\>(\@=" contained
+"syn match sassFunction "\<\%(percentage\|round\|ceil\|floor\|abs\)\>(\@=" contained
+"syn match sassFunction "\<\%(type-of\|unit\|unitless\|comparable\)\>(\@=" contained
+
+syn match sassFunction "\<\%(abs\|adjust-color\|adjust-hue\|alpha\|append\|blue\|call\|ceil\|change-color\|comparable\|complement\|darken\|desaturate\|feature-exists\|floor\|function-exists\|global-variable-exists\|grayscale\|green\|hsl\|hsla\|hue\|ie-hex-str\|if\|index\|inspect\|invert\|is-superselector\|join\|keywords\|length\|lighten\|lightness\|list-separator\|map-get\|map-has-key\|map-keys\|map-merge\|map-remove\|map-values\|max\|min\|mix\|mixin-exists\|nth\|opacify\|percentage\|quote\|random\|red\|rgb\|rgba\|round\|saturate\|saturation\|scale-color\|selector-append\|selector-extend\|selector-nest\|selector-parse\|selector-replace\|selector-unify\|set-nth\|simple-selectors\|str-index\|str-insert\|str-length\|str-slice\|to-lower-case\|to-upper-case\|transparentize\|type-of\|unique-id\|unit\|unitless\|unquote\|variable-exists\|zip\)\>(\@=" contained
 
 syn region sassInterpolation matchgroup=sassInterpolationDelimiter start="#{" end="}" contains=@sassCssAttributes,sassVariable,sassFunction containedin=cssStringQ,cssStringQQ,cssPseudoClass,sassProperty
 
