@@ -10,4 +10,6 @@ endif
 runtime! ftplugin/sass.vim
 setlocal comments=s1:/*,mb:*,ex:*/,://
 
+command! -buffer HamlSortProps call haml#sortProps()
+
 " vim:set sw=2:
