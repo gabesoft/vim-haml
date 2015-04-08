@@ -27,6 +27,6 @@ function! haml#sortProps()
     endw
 
     if fst != -1 && lst != -1 && fst <= lst
-        exec fst . ',' . lst . 'sort /^\s\{}\%(-[^-]\{-}-\)\=/'
+        exec fst . ',' . lst . 'sort /^\s\{}\%(-[^-]\{-}-\)\=\zs[^:]\{}\ze:/ r'
     endif
 endfunction
