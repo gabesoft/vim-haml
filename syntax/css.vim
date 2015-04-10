@@ -634,7 +634,7 @@ if version >= 508 || !exists("did_css_syn_inits")
   HiLink cssProp StorageClass
   HiLink cssAttr Constant
   HiLink cssUnitDecorators PreProc
-  HiLink cssNoise Noise
+  HiLink cssNoise PreProc
   HiLink atKeyword Comment
   delcommand HiLink
 endif
