@@ -71,7 +71,6 @@ syn region  sassComment     start="^\z(\s*\)//"  end="^\%(\z1 \)\@!" contains=sa
 syn region  sassCssComment  start="^\z(\s*\)/\*" end="^\%(\z1 \)\@!" contains=sassTodo,@Spell
 
 hi def link sassCssComment              sassComment
-hi def link sassProperty                cssProp
 hi def link sassComment                 Comment
 hi def link sassDefault                 cssImportant
 hi def link sassVariable                Identifier

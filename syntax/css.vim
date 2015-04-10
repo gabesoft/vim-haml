@@ -92,6 +92,8 @@ syn match cssMediaProp contained /\(\(max\|min\)-\)\=device-\(height\|width\)/
 syn match cssMediaProp contained /\(\(max\|min\)-\)\=\(height\|width\|resolution\|monochrome\|color\(-index\)\=\)/
 syn keyword cssMediaAttr contained portrait landscape progressive interlace
 
+syn keyword cssIEProp contained behavior
+
 " @page
 " http://www.w3.org/TR/css3-page/
 syn match cssPage "@page\>[^{]*{\@=" contains=cssPagePseudo,cssIncludeKeyword nextgroup=cssPageWrap transparent skipwhite skipnl
@@ -213,6 +215,8 @@ syn keyword cssBackgroundAttr contained space round
 
 " background-size attributes
 syn keyword cssBackgroundAttr contained cover contain
+
+syn keyword cssInitialAttr contained initial
 
 syn match cssBorderProp contained "\<border\(-\(top\|right\|bottom\|left\)\)\=\(-\(width\|color\|style\)\)\=\>"
 syn match cssBorderProp contained "\<border\(-\(top\|bottom\)-\(left\|right\)\)\=-radius\>"
@@ -557,6 +561,7 @@ if version >= 508 || !exists("did_css_syn_inits")
 
   HiLink cssAnimationAttr cssAttr
   HiLink cssBackgroundAttr cssAttr
+  HiLink cssInitialAttr cssAttr
   HiLink cssBorderAttr cssAttr
   HiLink cssBoxAttr cssAttr
   HiLink cssContentForPagedMediaAttr cssAttr
@@ -617,6 +622,7 @@ if version >= 508 || !exists("did_css_syn_inits")
   HiLink cssMediaComma Normal
   HiLink cssMediaKeyword Statement
   HiLink cssMediaProp cssProp
+  HiLink cssIEProp cssProp
   HiLink cssMediaAttr cssAttr
   HiLink cssPage atKeyword
   HiLink cssPagePseudo PreProc
